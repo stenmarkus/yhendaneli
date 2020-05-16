@@ -10,9 +10,9 @@ Neli-ritta mäng arvuti vastu.
 
 ## Autorid
 
-* **Sten Laht** - Developer
-* **Künter Evert** - Design
-* **Egert Klaamas** - Developer
-* **Laur Tõnisson** - Documentation
-* **Kristo Roots** - Video + Presentation
+* **Sten Laht** 
+* **Künter Evert** 
+* **Egert Klaamas** 
+* **Laur Tõnisson** 
+* **Kristo Roots** 
 * **Markus Must** 
