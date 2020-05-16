@@ -10,9 +10,9 @@ Neli-ritta mäng arvuti vastu.
 
 ## Autorid
 
-**Sten Laht**
-**Künter Evert**
-**Egert Klaamas**
-**Laur Tõnisson**
-**Kristo Roots**
-**Markus Must**
+* **Sten Laht**
+* **Künter Evert**
+* **Egert Klaamas**
+* **Laur Tõnisson**
+* **Kristo Roots**
+* **Markus Must**
