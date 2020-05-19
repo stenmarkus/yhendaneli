@@ -19,7 +19,6 @@ public class connect4Controle : MonoBehaviour {
 
 	public Sprite resetIconSprite;
 	public Sprite squareSprite;
-	//public Collider2D resetCollider;
 
 	private int movingBaseBoard = 0;
 
@@ -31,9 +30,6 @@ public class connect4Controle : MonoBehaviour {
 	private int[,] gameBoard = new int[7, 6];//-1=yellow 1=red (0 or null = blank)
 	private GameObject[,] gameBoardObjects = new GameObject[7, 6];
 
-	//public AudioClip falling;
-	//public AudioClip hitting;
-	//AudioSource audioSource;
 
 	private Vector3 mouseSpot;
 
@@ -89,7 +85,6 @@ public class connect4Controle : MonoBehaviour {
 							mySpriteRendererTC.sprite = resetIconSprite;
 
 
-							//Debug.Break();
 						}
 
 						turnColor = changeColor(turnColor);
@@ -99,7 +94,6 @@ public class connect4Controle : MonoBehaviour {
 					}
 				}
 			}else if (Input.GetMouseButtonUp(0)) {
-				//Debug.Log("Pressed left click.");
 				if (canMakeTurn == true) {
 					if (attemptToPlace(mouseSpot, rowCount, rowStartSpot, colCount, colStartSpot, turnColor, false) == true) {
 						canMakeTurn = false;
@@ -111,8 +105,6 @@ public class connect4Controle : MonoBehaviour {
 							SpriteRenderer mySpriteRendererTC = turnIndicator.GetComponent<SpriteRenderer>();
 							mySpriteRendererTC.sprite = resetIconSprite;
 
-
-							//Debug.Break();
 						}
 						
 							turnColor = changeColor(turnColor);
@@ -128,9 +120,7 @@ public class connect4Controle : MonoBehaviour {
 
 			if (movingBaseBoard == 1) {
 				if (currentTime <= timeToMove) {
-					//Debug.Log("ct " + currentTime);
 					currentTime += Time.deltaTime;
-					//Debug.Log("ct " + currentTime);
 					this.transform.position = Vector3.Lerp(startPosition, target, currentTime / timeToMove);
 				}
 				else {
@@ -174,7 +164,6 @@ public class connect4Controle : MonoBehaviour {
 
 
 		//rest game
-		//Handheld.Vibrate();
 	}
 
 
@@ -205,7 +194,6 @@ public class connect4Controle : MonoBehaviour {
 			}
 		}
 
-		//Debug.Log("color change");
 		if (results[0] == 1) {
 			for (int i = 0; i < 4; i++) {
 				SpriteRenderer mySpriteRenderer = gameBoardObjects[results[1], results[2] - i].GetComponent<SpriteRenderer>();
@@ -214,20 +202,17 @@ public class connect4Controle : MonoBehaviour {
 			}
 		} else if (results[0] == 2) {
 			for (int i = 0; i < 4; i++) {
-				//Debug.Log(results[1] + i + " "+ results[2]);
 				SpriteRenderer mySpriteRenderer = gameBoardObjects[results[1] - i, results[2]].GetComponent<SpriteRenderer>();
 				mySpriteRenderer.color = newColor;
 
 			}
 		} else if (results[0] == 3) {
 			for (int i = 0; i < 4; i++) {
-				//Debug.Log(results[1] + i + " " + results[2]);
 				SpriteRenderer mySpriteRenderer = gameBoardObjects[results[1] - i, results[2] + i].GetComponent<SpriteRenderer>();
 				mySpriteRenderer.color = newColor;
 			}
 		} else if (results[0] == 4) {
 			for (int i = 0; i < 4; i++) {
-				//Debug.Log(results[1] + i + " " + results[2]);
 				SpriteRenderer mySpriteRenderer = gameBoardObjects[results[1] - i, results[2] - i].GetComponent<SpriteRenderer>();
 				mySpriteRenderer.color = newColor;
 
@@ -253,12 +238,9 @@ public class connect4Controle : MonoBehaviour {
 			if (gameBoard[spotx, i] == 0) {
 				GameObject clone;
 				clone = Instantiate(peice, new Vector3(3 * spotx + rss, css, 0), Quaternion.identity);
-				//audioSource.PlayOneShot(hitting, 1.0f);
-				//Debug.Log("played sound");
 				gameBoardObjects[spotx, i] = clone;
 				SpriteRenderer mySpriteRenderer = clone.GetComponent<SpriteRenderer>();
 				SpriteRenderer mySpriteRendererTC = turnIndicator.GetComponent<SpriteRenderer>();
-				//Debug.Log(tc);
 				if (tc == 1) {
 					mySpriteRenderer.color = tile1Color;
 					mySpriteRendererTC.color = tile2Color;
@@ -292,7 +274,6 @@ public class connect4Controle : MonoBehaviour {
 
 
 	private int[] checkForWin(int rc, int cc, int tc) {//0,0,0 equals loss //1=vertical 2=horozontal 3=diagnagal b-t 4=diagnol t-b// then start spot x then y
-		//Debug.Log("checking");
 		//vertical
 		int countX = 0;
 		for (int i = 0; i < rc;  i++){

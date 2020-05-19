@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class changeColorSlowly : MonoBehaviour {
 
-	//Color tile1Color = new Color32(242, 27, 63, 255);
-	//Color tile2Color = new Color32(238, 232, 44, 255);
-	//SpriteRenderer mySpriteRendererTC;
-
 	// Use this for initialization
 	void Start () {
 		//mySpriteRendererTC = this.GetComponent<SpriteRenderer>();
