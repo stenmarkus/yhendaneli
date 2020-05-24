@@ -46,14 +46,13 @@ public class AI : MonoBehaviour {
 
 
 	private int checkForAWinningSpot(int tc){
-		for (int j = 0; j < 7; j++) {//j=col(x)
-			for (int i = 0; i < 6; i++) {//i=row(y)
+		for (int j = 0; j < 7; j++) {
+			for (int i = 0; i < 6; i++) {
 				if (gameBoard[j, i] == 0) {
 
 					//vertical
 					if (i > 2) {
 						if (gameBoard[j, i - 1] == tc && gameBoard[j, i - 2] == tc && gameBoard[j, i - 3] == tc) {
-							Debug.Log("vertical win or blocking a win");
 							return j;
 						}
 					}
@@ -69,7 +68,6 @@ public class AI : MonoBehaviour {
 						}
 
 						if (count >= 4) {
-							Debug.Log("horizontal win or blocking a win");
 							return j;
 						}
 					}
@@ -85,8 +83,6 @@ public class AI : MonoBehaviour {
 							count = 0;
 							for (int a = 0; a < 4; a++) {
 								if (gameBoard[n - a, p + a] == tc || (j == n - a && i == p + a)) {
-									//Debug.Log(n-a + " " + (p + a));
-									//Debug.Log((j == n && i == p));
 									count++;
 								}
 								else {
@@ -108,8 +104,6 @@ public class AI : MonoBehaviour {
 							count = 0;
 							for (int a = 0; a < 4; a++) {
 								if (gameBoard[n - a, p - a] == tc || (j == n - a && i == p - a)) {
-									//Debug.Log(n-a + " " + (p + a));
-									//Debug.Log((j == n && i == p));
 									count++;
 								}
 								else {
@@ -132,9 +126,7 @@ public class AI : MonoBehaviour {
 	}
 
 
-	//rc=7 cc=6
 	private int[] checkForWin(int tc) {//0,0,0 equals loss //1=vertical 2=horozontal 3=diagnagal b-t 4=diagnol t-b
-													   //Debug.Log("checking");
 													   //vertical
 		int countX = 0;
 		for (int i = 0; i < 7; i++) {
@@ -147,7 +139,6 @@ public class AI : MonoBehaviour {
 				}
 
 				if (countX >= 4) {
-					Debug.Log("Vertical Win");
 					int[] winningLocation = { 1, i, j };
 					return winningLocation;
 				}
@@ -166,7 +157,6 @@ public class AI : MonoBehaviour {
 				}
 
 				if (countY >= 4) {
-					Debug.Log("horozontal Win");
 					int[] winningLocation = { 2, j, i };
 					return winningLocation;
 				}

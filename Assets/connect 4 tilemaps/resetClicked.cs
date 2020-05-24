@@ -18,7 +18,6 @@ public class resetClicked : MonoBehaviour {
 	}
 
 	void OnMouseDown() {
-		//Debug.Log("Sprite Clicked");
 		c4c.resetClicked(powerLevel);
 	}
 }
