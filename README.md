@@ -1,7 +1,7 @@
 
 # Ühenda 4
 #### Mobiilirakenduste arendamine, Informaatika, Tallinna Ülikool 2020
-[Unityga](https://unity.com) arendatud mäng, kus võitmiseks peab ühendama neli kasti järjest vertikaalselt, horisontaalselt või diagonaalselt.
+Unityga arendatud mäng, kus võitmiseks peab ühendama neli kasti järjest vertikaalselt, horisontaalselt või diagonaalselt.
 
 Saadaval arvutile ja Androidile
 
@@ -22,7 +22,7 @@ Mängimiseks on vajalik [Unity](https://store.unity.com/download)
 
 ### Androidil
 
-*  Lae alla apk
+*  Lae alla [apk](http://www.tlu.ee/~laurt/mobiilirakendused/yhenda4.apk)
 *  Installeeri
 *  Naudi
 
