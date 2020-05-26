@@ -7,6 +7,8 @@ public class checkOnGround : MonoBehaviour {
 	public Collider2D groundCollider;
 	private Rigidbody2D rb;
 
+	//public AudioClip hitting;
+	//AudioSource audioSource;
 
 	public connect4Controle c4c;
 
@@ -17,6 +19,9 @@ public class checkOnGround : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody2D>();
+		//audioSource = GetComponent<AudioSource>();
+		//rb.velocity = new Vector2(rb.velocity.x, 0); // set y velocity to zero
+		//rb.AddForce(new Vector2(0, -2000));
 	}
 	
 	// Update is called once per frame
@@ -28,9 +33,10 @@ public class checkOnGround : MonoBehaviour {
 		if (groundCollider.isTrigger) {
 
 			if (soundPlayed == false) {
+				//audioSource.PlayOneShot(hitting, 1.0f);
 				soundPlayed = true;
 			}
-
+				
 			if (rb.velocity.magnitude <= .2 && movementStarted == true) {
 
 
