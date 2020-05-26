@@ -19,6 +19,7 @@ public class connect4Controle : MonoBehaviour {
 
 	public Sprite resetIconSprite;
 	public Sprite squareSprite;
+	//public Collider2D resetCollider;
 
 	private int movingBaseBoard = 0;
 
@@ -30,6 +31,9 @@ public class connect4Controle : MonoBehaviour {
 	private int[,] gameBoard = new int[7, 6];//-1=yellow 1=red (0 or null = blank)
 	private GameObject[,] gameBoardObjects = new GameObject[7, 6];
 
+	//public AudioClip falling;
+	//public AudioClip hitting;
+	//AudioSource audioSource;
 
 	private Vector3 mouseSpot;
 
@@ -85,6 +89,7 @@ public class connect4Controle : MonoBehaviour {
 							mySpriteRendererTC.sprite = resetIconSprite;
 
 
+							//Debug.Break();
 						}
 
 						turnColor = changeColor(turnColor);
@@ -105,6 +110,8 @@ public class connect4Controle : MonoBehaviour {
 							SpriteRenderer mySpriteRendererTC = turnIndicator.GetComponent<SpriteRenderer>();
 							mySpriteRendererTC.sprite = resetIconSprite;
 
+
+							//Debug.Break();
 						}
 						
 							turnColor = changeColor(turnColor);
@@ -161,9 +168,7 @@ public class connect4Controle : MonoBehaviour {
 				}
 			}
 		}
-
-
-		//rest game
+			
 	}
 
 
@@ -193,7 +198,7 @@ public class connect4Controle : MonoBehaviour {
 				newColor = tile2Color;
 			}
 		}
-
+			
 		if (results[0] == 1) {
 			for (int i = 0; i < 4; i++) {
 				SpriteRenderer mySpriteRenderer = gameBoardObjects[results[1], results[2] - i].GetComponent<SpriteRenderer>();
@@ -223,7 +228,7 @@ public class connect4Controle : MonoBehaviour {
 	}
 
 
-	public bool attemptToPlace(Vector3 mcl, int rc, int rss, int cc, int css, int tc, bool isAIPlacing) {//mcl x location is the x location for an ai player
+	public bool attemptToPlace(Vector3 mcl, int rc, int rss, int cc, int css, int tc, bool isAIPlacing) {
 		int spotx;
 		if (isAIPlacing == false) {
 			spotx = getPlaceSpot(mouseSpot, rowCount, rowStartSpot);
@@ -273,7 +278,7 @@ public class connect4Controle : MonoBehaviour {
 	}
 
 
-	private int[] checkForWin(int rc, int cc, int tc) {//0,0,0 equals loss //1=vertical 2=horozontal 3=diagnagal b-t 4=diagnol t-b// then start spot x then y
+	private int[] checkForWin(int rc, int cc, int tc) {//0,0,0 equals loss //1=vertical 2=horozontal 3=diagnagal b-t 4=diagnol t-b//
 		//vertical
 		int countX = 0;
 		for (int i = 0; i < rc;  i++){
@@ -286,7 +291,6 @@ public class connect4Controle : MonoBehaviour {
 				}
 
 				if (countX >= 4) {
-					Debug.Log("Vertical Win");
 					int[] winningLocation = {1,i,j};
 					return winningLocation;
 				}
@@ -305,7 +309,6 @@ public class connect4Controle : MonoBehaviour {
 					}
 
 					if (countY >= 4) {
-						Debug.Log("horozontal Win");
 						int[] winningLocation = { 2, j, i };
 						return winningLocation;
 					}
